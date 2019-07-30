@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: service
+  namespace: 
+spec:
+  externalTrafficPolicy: Local
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 8080
+      # nodePort: 8080
+  selector:
+    app: appname
+  sessionAffinity: ClientIP
+  # 0.5天
+  sessionAffinityConfig:
+    clientIP:
+      timeoutSeconds: 43200    
+  type: NodePort  

@@ -1,0 +1,7 @@
+- op: replace
+  path: /metadata/name
+  value: mysvc
+# nodeport
+- op: add
+  path: /spec/ports/0/nodePort
+  value: 30666

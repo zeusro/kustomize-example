@@ -1,0 +1,15 @@
+- op: replace
+  path: /metadata/name
+  value: xx.com
+- op: replace
+  path: /spec/rules/0/host
+  value: xx.com
+- op: replace
+  path: /spec/rules/0/http/paths/0/backend/serviceName
+  value: mysvc
+- op: replace
+  path: /spec/tls/0/hosts/0
+  value: xx.com 
+- op: replace
+  path: /spec/tls/0/secretName
+  value: tls-example

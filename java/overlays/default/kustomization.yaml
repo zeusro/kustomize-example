@@ -1,0 +1,29 @@
+bases:
+- ../../base
+# resources:
+#   - ../../base/service-lb.yaml
+commonLabels:
+  app: tj-java
+  language: java
+namespace: default
+commonAnnotations:
+  service.beta.kubernetes.io/alicloud-loadbalancer-id: abcd
+patchesJson6902:
+# - target:
+#     group: apps
+#     version: v1beta2
+#     kind: Deployment
+#     name: java-app
+#   path: deployment_patch.yaml
+# - target:
+#     version: v1
+#     kind: Service
+#     name: service
+#   path: service_patch.yaml
+- target:
+    group: extensions
+    version: v1beta1
+    kind: Ingress
+    name: hostname
+  path: Ingress_patch.yaml
+  
